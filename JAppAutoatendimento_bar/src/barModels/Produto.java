@@ -14,6 +14,8 @@ public class Produto {
     private String nome;
     private String descricao;
     private float valor;
+    private int qnt;
+    
 
     public Produto() {
     }
@@ -25,6 +27,14 @@ public class Produto {
         this.descricao = descricao;
         this.valor = valor;
     }
+
+    public Produto(String nome, float valor, int qnt) {
+        this.nome = nome;
+        this.valor = valor;
+        this.qnt = qnt;
+    }
+    
+    
     
     public Produto(int tipo, String nome, String descricao, float valor) {
         this.tipo = tipo;
@@ -72,6 +82,16 @@ public class Produto {
     public void setValor(float valor) {
         this.valor = valor;
     }
+
+    public int getQnt() {
+        return qnt;
+    }
+
+    public void setQnt(int qnt) {
+        this.qnt = qnt;
+    }
+    
+    
     
      public void cadastrar() {
         Produto_Dao pDao = new Produto_Dao(this.tipo, this.nome, this.descricao, this.valor);

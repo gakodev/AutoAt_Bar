@@ -1,6 +1,7 @@
 package barModels;
 
-import barModels.FormaPagamento;
+
+import java.util.ArrayList;
 
 /**
  *
@@ -9,9 +10,16 @@ import barModels.FormaPagamento;
 public class Pedido {
     
     private int idPedido;
-    private FormaPagamento pay;
+    private int pay;
+    private ArrayList<Produto> produtos;
     private float valorTotal;
 
+    public Pedido(int pay, ArrayList<Produto> produtos, float valorTotal) {
+        this.pay = pay;
+        this.produtos = produtos;
+        this.valorTotal = valorTotal;
+    }
+    
     public int getIdPedido() {
         return idPedido;
     }
@@ -20,11 +28,11 @@ public class Pedido {
         this.idPedido = idPedido;
     }
 
-    public FormaPagamento getPay() {
+    public int getPay() {
         return pay;
     }
 
-    public void setPay(FormaPagamento pay) {
+    public void setPay(int pay) {
         this.pay = pay;
     }
 
@@ -34,6 +42,14 @@ public class Pedido {
 
     public void setValorTotal(float valorTotal) {
         this.valorTotal = valorTotal;
+    }
+
+    public ArrayList<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(ArrayList<Produto> produtos) {
+        this.produtos = produtos;
     }
     
     
