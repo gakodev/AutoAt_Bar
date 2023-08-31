@@ -1,5 +1,6 @@
 package barControllers;
 
+import barModels.Pedido;
 import barModels.Produto;
 import java.util.ArrayList;
 
@@ -13,6 +14,15 @@ public class Pedido_Controller {
     private int pay;
     private ArrayList<Produto> produtos;
     private float valorTotal;
+
+    public Pedido_Controller(int pay, ArrayList<Produto> produtos, float valorTotal) {
+        this.pay = pay;
+        this.produtos = produtos;
+        this.valorTotal = valorTotal;
+    }
+    
+    
+    
 
     
     public int getIdPedido() {
@@ -45,6 +55,11 @@ public class Pedido_Controller {
 
     public void setProdutos(ArrayList<Produto> produtos) {
         this.produtos = produtos;
+    }
+    
+    public void fechaPedido () {
+    Pedido p = new Pedido();
+    p.fechaPedido();
     }
     
 }

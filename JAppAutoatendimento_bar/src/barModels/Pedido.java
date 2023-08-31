@@ -1,6 +1,7 @@
 package barModels;
 
 
+import barDao.Pedido_Dao;
 import java.util.ArrayList;
 
 /**
@@ -18,6 +19,9 @@ public class Pedido {
         this.pay = pay;
         this.produtos = produtos;
         this.valorTotal = valorTotal;
+    }
+
+    public Pedido() {
     }
     
     public int getIdPedido() {
@@ -52,6 +56,10 @@ public class Pedido {
         this.produtos = produtos;
     }
     
+    public void fechaPedido () {
+    Pedido_Dao pDao = new Pedido_Dao(this.pay, this.produtos, this.valorTotal);
+    
+    }
     
     
 }

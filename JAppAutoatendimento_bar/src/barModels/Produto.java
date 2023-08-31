@@ -96,6 +96,7 @@ public class Produto {
      public void cadastrar() {
         Produto_Dao pDao = new Produto_Dao(this.tipo, this.nome, this.descricao, this.valor);
         pDao.cadastrar();
+        
     }
      
       public ArrayList<Produto> listarProdutos (JTable table) {
@@ -112,6 +113,8 @@ public class Produto {
         Produto_Dao pDao = new Produto_Dao();
         pDao.excluir(id);
       }
+      
+      
     
     
 }

@@ -1,8 +1,12 @@
 package barViews;
 
+import barControllers.Pedido_Controller;
+import barControllers.Produto_Controller;
+import barModels.Pedido;
 import barModels.Produto;
 import barViews.loginFrame;
 import java.util.ArrayList;
+import java.util.Locale;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 /**
@@ -1352,11 +1356,12 @@ public class mainFrame extends javax.swing.JFrame {
 
     private ArrayList<Produto> fechaCarrinho () {
         
-        ArrayList<Produto> produtos = null;
+        ArrayList<Produto> produtos = new ArrayList<Produto>();
         
         int qntdAgua = Integer.parseInt(jSpinner1.getValue().toString());
         if(qntdAgua != 0 ) {
             Produto pAgua = new Produto("Água mineral", 6.99f, Integer.parseInt(jSpinner1.getValue().toString()));
+           // System.out.println(pAgua.getNome());
             produtos.add(pAgua);
         }
         int qntdSuco = Integer.parseInt(jSpinner2.getValue().toString());
@@ -1366,18 +1371,116 @@ public class mainFrame extends javax.swing.JFrame {
         }
         int qntdMonster = Integer.parseInt(jSpinner3.getValue().toString());
         if(qntdMonster != 0 ){
-            Produto pMonster = new Produto ("Monster", 9.99f, Integer.parseInt(jSpinner2.getValue().toString()));
+            Produto pMonster = new Produto ("Monster", 9.99f, Integer.parseInt(jSpinner3.getValue().toString()));
             produtos.add(pMonster);
         }
         int qntdCorona = Integer.parseInt(jSpinner4.getValue().toString());
+        if(qntdCorona != 0){
+            Produto pCorona = new Produto ("Corona", 12.90f, Integer.parseInt(jSpinner4.getValue().toString()));
+            produtos.add(pCorona);
+        }
         int qntdIpa = Integer.parseInt(jSpinner5.getValue().toString());
+        if(qntdIpa != 0) {
+            Produto pIpa = new Produto ("Patagônia IPA Long Neck", 14.90f, Integer.parseInt(jSpinner5.getValue().toString()));
+            produtos.add(pIpa);
+        }
         int qntdHeineken = Integer.parseInt(jSpinner6.getValue().toString());
+        if(qntdHeineken != 0) {
+            Produto pHeineken = new Produto ("Heineken Long Neck", 12.90f, Integer.parseInt(jSpinner6.getValue().toString()));
+            produtos.add(pHeineken);
+        }
         int qntdStella = Integer.parseInt(jSpinner7.getValue().toString());
+        if(qntdStella != 0) {
+            Produto pStella = new Produto ("Chopp Stella", 15.90f, Integer.parseInt(jSpinner7.getValue().toString()));
+            produtos.add(pStella);
+        }
         int qntdWeiss = Integer.parseInt(jSpinner8.getValue().toString());
+        if(qntdWeiss != 0) {
+            Produto pWeiss = new Produto ("Patagônia Chopp WEISS", 17.90f, Integer.parseInt(jSpinner8.getValue().toString()));
+            produtos.add(pWeiss);
+        }
         int qntdBrahma = Integer.parseInt(jSpinner9.getValue().toString());
+        if(qntdBrahma != 0) {
+            Produto pBrahma = new Produto ("Chopp Brahma Pilsen", 15.50f, Integer.parseInt(jSpinner9.getValue().toString()));
+            produtos.add(pBrahma);
+        }
         int qntdNegroni = Integer.parseInt(jSpinner10.getValue().toString());
+        if(qntdNegroni != 0) {
+            Produto pNegroni = new Produto ("Negroni", 29.99f, Integer.parseInt(jSpinner10.getValue().toString()));
+            produtos.add(pNegroni);
+        }
         int qntdMojito = Integer.parseInt(jSpinner11.getValue().toString());
+        if(qntdMojito != 0) {
+            Produto pMojito = new Produto ("Mojito", 29.50f, Integer.parseInt(jSpinner11.getValue().toString()));
+            produtos.add(pMojito);
+        }
         int qntdMoscow = Integer.parseInt(jSpinner12.getValue().toString());
+        if(qntdMoscow != 0) {
+            Produto pMoscow = new Produto ("Moscow Mule", 32.50f, Integer.parseInt(jSpinner12.getValue().toString()));
+            produtos.add(pMoscow);
+        }
+        
+        float qntdAguaAlt = Float.parseFloat(jSpinner13.getValue().toString()) * 6.99f;
+        if(qntdAguaAlt != 0 ) {
+            Produto pAgua = new Produto("Água mineral", 6.99f, Integer.parseInt(jSpinner13.getValue().toString()));
+            produtos.add(pAgua);
+        }
+        float qntdSucoAlt = Float.parseFloat(jSpinner14.getValue().toString()) * 8.99f;
+        if(qntdSucoAlt != 0) {
+            Produto pSuco = new Produto("Suco natural", 8.99f, Integer.parseInt(jSpinner14.getValue().toString()));
+            produtos.add(pSuco);
+        }
+        float qntdMonsterAlt = Float.parseFloat(jSpinner15.getValue().toString()) * 9.99f;
+        if(qntdMonsterAlt != 0 ){
+            Produto pMonster = new Produto ("Monster", 9.99f, Integer.parseInt(jSpinner15.getValue().toString()));
+            produtos.add(pMonster);
+        }
+        float qntdNegroniAlt = Float.parseFloat(jSpinner16.getValue().toString()) * 29.99f;
+        if(qntdNegroniAlt != 0) {
+            Produto pNegroni = new Produto ("Negroni", 29.99f, Integer.parseInt(jSpinner16.getValue().toString()));
+            produtos.add(pNegroni);
+        }
+        float qntdMojitoAlt = Float.parseFloat(jSpinner17.getValue().toString()) * 29.50f;
+        if(qntdMojitoAlt != 0) {
+            Produto pMojito = new Produto ("Mojito", 29.50f, Integer.parseInt(jSpinner17.getValue().toString()));
+            produtos.add(pMojito);
+        }
+        float qntdMoscowAlt = Float.parseFloat(jSpinner18.getValue().toString()) * 32.50f;
+        if(qntdMoscowAlt != 0) {
+            Produto pMoscow = new Produto ("Moscow Mule", 32.50f, Integer.parseInt(jSpinner18.getValue().toString()));
+            produtos.add(pMoscow);
+        }
+        
+        float qntdCoronaAlt = Float.parseFloat(jSpinner22.getValue().toString()) * 12.90f;
+        if(qntdCoronaAlt != 0){
+            Produto pCorona = new Produto ("Corona", 12.90f, Integer.parseInt(jSpinner22.getValue().toString()));
+            produtos.add(pCorona);
+        }
+        float qntdIpaAlt = Float.parseFloat(jSpinner23.getValue().toString()) * 14.90f;
+        if(qntdIpaAlt != 0) {
+            Produto pIpa = new Produto ("Patagônia IPA Long Neck", 14.90f, Integer.parseInt(jSpinner23.getValue().toString()));
+            produtos.add(pIpa);
+        }
+        float qntdHeinekenAlt = Float.parseFloat(jSpinner24.getValue().toString()) * 12.90f;
+        if(qntdHeinekenAlt != 0) {
+            Produto pHeineken = new Produto ("Heineken Long Neck", 12.90f, Integer.parseInt(jSpinner24.getValue().toString()));
+            produtos.add(pHeineken);
+        }
+        float qntdStellaAlt = Float.parseFloat(jSpinner25.getValue().toString()) * 15.90f;
+        if(qntdStellaAlt != 0) {
+            Produto pStella = new Produto ("Chopp Stella", 15.90f, Integer.parseInt(jSpinner25.getValue().toString()));
+            produtos.add(pStella);
+        }
+        float qntdWeissAlt = Float.parseFloat(jSpinner26.getValue().toString()) * 17.90f;
+        if(qntdWeissAlt != 0) {
+            Produto pWeiss = new Produto ("Patagônia Chopp WEISS", 17.90f, Integer.parseInt(jSpinner26.getValue().toString()));
+            produtos.add(pWeiss);
+        }
+        float qntdBrahmaAlt = Float.parseFloat(jSpinner27.getValue().toString()) * 15.50f;
+        if(qntdBrahmaAlt != 0) {
+            Produto pBrahma = new Produto ("Chopp Brahma Pilsen", 15.50f, Integer.parseInt(jSpinner27.getValue().toString()));
+            produtos.add(pBrahma);
+        }
         
         return produtos;
     };
@@ -1417,8 +1520,9 @@ public class mainFrame extends javax.swing.JFrame {
                 spinner7 + spinner8 + spinner9 + spinner10 + spinner11 + spinner12 + spinner13 + 
                 spinner14 + spinner15 + spinner16 + spinner17 + spinner18 + spinner22 + spinner23 +
                 spinner24 + spinner25 + spinner26 + spinner27;
-        jLabel20.setText(String.format("%.2f", vTotal));
-     
+        
+        jLabel20.setText(String.format(Locale.US, "%.2f", vTotal));
+        
     }
     
     private void jSpinner1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner1StateChanged
@@ -1519,6 +1623,15 @@ public class mainFrame extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // fechar pedido
+        
+        int mp = 1;
+        ArrayList<Produto> produtos = this.fechaCarrinho();
+        float valorTotal = Float.parseFloat(jLabel20.getText().toString());
+        
+        
+        Pedido_Controller pedidoControl = new Pedido_Controller(1, this.fechaCarrinho(), Float.parseFloat(jLabel20.getText().toString()));
+        pedidoControl.fechaPedido();
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed

@@ -18,6 +18,11 @@ public class Pedido_Dao {
     private ArrayList<Produto> produtos;
     private float valorTotal;
 
+    public Pedido_Dao(int pay, ArrayList<Produto> produtos, float valorTotal) {
+        this.pay = pay;
+        this.produtos = produtos;
+        this.valorTotal = valorTotal;
+    }
     
     public int getIdPedido() {
         return idPedido;
@@ -49,6 +54,12 @@ public class Pedido_Dao {
 
     public void setProdutos(ArrayList<Produto> produtos) {
         this.produtos = produtos;
+    }
+    
+    public void fechaPedido () {
+    
+    
+    
     }
     
 }
