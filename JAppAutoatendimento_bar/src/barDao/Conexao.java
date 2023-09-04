@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class Conexao {
     
-    private static final String URL = "jdbc:mysql://localhost:3306/mydb";
+    private static final String URL = "jdbc:mysql://localhost:3306/bd_atbar";
     private static final String User = "root";
     
     private static final String Driver = "com.mysql.jdbc.Driver";

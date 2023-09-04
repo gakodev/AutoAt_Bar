@@ -7,6 +7,7 @@ package barDao;
 
 import barModels.Produto;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -57,9 +58,23 @@ public class Pedido_Dao {
     }
     
     public void fechaPedido () {
+        String sql = "INSERT INTO pedido (formaPagamento, valorTotal) VALUES ("
+                + "" + this.pay + ","
+                + "'" + this.valorTotal + "')";
+        Conexao.executar(sql);
+        System.out.println(sql);
+        JOptionPane.showMessageDialog(null, "ok PEDIDO");
     
-    
-    
+        for(Produto p : produtos){
+        String sqlPedido_has_produto = "INSERT INTO pedido_has_produto (Pedido_idPedido, Produto_idProduto, quantidade) VALUES ("
+                + "" + this.idPedido + ","
+                + "" + p.getIdProduto() + ","
+                + "" + p.getQnt() + ")";
+            System.out.println(sqlPedido_has_produto);
+        Conexao.executar(sqlPedido_has_produto);
+        };
+        
+        
     }
     
 }

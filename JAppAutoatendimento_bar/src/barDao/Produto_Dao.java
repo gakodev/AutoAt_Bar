@@ -29,7 +29,7 @@ public class Produto_Dao {
     }
     
    public void cadastrar () {
-        String sql = "INSERT INTO produto (TipoProduto_idTipoProduto, nome, descricao, valor) VALUES ("
+        String sql = "INSERT INTO produto (tipo, nome, descricao, valor) VALUES ("
                 + "'" + this.tipo + "',"
                 + "'" + this.nome + "',"
                 + "'" + this.descricao + "',"
@@ -39,7 +39,7 @@ public class Produto_Dao {
     }
    
    public ArrayList<Produto> listarProdutos (JTable table) {
-        String sql = "SELECT idProduto, nome, TipoProduto_idTipoProduto, descricao, valor FROM produto";
+        String sql = "SELECT idProduto, nome, tipo, descricao, valor FROM produto";
         ResultSet rs = Conexao.consultar(sql);
         ArrayList<Produto> listaDeProdutos = new ArrayList<Produto>();
         
@@ -51,7 +51,7 @@ public class Produto_Dao {
                 float valor;
 
                 idProduto = rs.getInt("idProduto");
-                TipoProduto_idTipoProduto = rs.getInt("TipoProduto_idTipoProduto");
+                TipoProduto_idTipoProduto = rs.getInt("tipo");
                 nome = rs.getString("nome");
                 descricao = rs.getString("descricao");
                 valor = rs.getFloat("valor");
@@ -78,7 +78,7 @@ public class Produto_Dao {
    
    public void editar (int id) {
        String sql = "UPDATE produto SET "
-                + "TipoProduto_idTipoProduto = " + this.tipo + ","
+                + "tipo = " + this.tipo + ","
                 + "nome = '" + this.nome + "',"
                 + "descricao = '" + this.descricao + "',"
                 + "valor = " + this.valor + ""

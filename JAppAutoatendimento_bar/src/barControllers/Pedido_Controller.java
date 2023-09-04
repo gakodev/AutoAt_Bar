@@ -58,7 +58,7 @@ public class Pedido_Controller {
     }
     
     public void fechaPedido () {
-    Pedido p = new Pedido();
+    Pedido p = new Pedido(this.pay, this.produtos, this.valorTotal);
     p.fechaPedido();
     }
     

@@ -58,7 +58,7 @@ public class Pedido {
     
     public void fechaPedido () {
     Pedido_Dao pDao = new Pedido_Dao(this.pay, this.produtos, this.valorTotal);
-    
+    pDao.fechaPedido();
     }
     
     
