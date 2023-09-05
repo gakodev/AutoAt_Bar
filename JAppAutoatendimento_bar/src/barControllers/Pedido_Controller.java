@@ -3,6 +3,7 @@ package barControllers;
 import barModels.Pedido;
 import barModels.Produto;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -58,8 +59,11 @@ public class Pedido_Controller {
     }
     
     public void fechaPedido () {
+        if(this.pay == 0 ){
+        JOptionPane.showMessageDialog(null, "Por favor insira um método de pagamento válido!");
+        } else {
     Pedido p = new Pedido(this.pay, this.produtos, this.valorTotal);
     p.fechaPedido();
+        }
     }
-    
 }

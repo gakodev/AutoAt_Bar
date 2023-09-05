@@ -28,13 +28,18 @@ public class Produto {
         this.valor = valor;
     }
 
-    public Produto(String nome, float valor, int qnt) {
+    public Produto(int idProduto, String nome, float valor, int qnt) {
+        this.idProduto = idProduto;
         this.nome = nome;
         this.valor = valor;
         this.qnt = qnt;
     }
     
-    
+    public Produto(String nome, float valor, int qnt) {
+        this.nome = nome;
+        this.valor = valor;
+        this.qnt = qnt;
+    }
     
     public Produto(int tipo, String nome, String descricao, float valor) {
         this.tipo = tipo;

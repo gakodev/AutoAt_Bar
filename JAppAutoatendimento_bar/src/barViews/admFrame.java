@@ -252,6 +252,11 @@ public class admFrame extends javax.swing.JFrame {
         // Cadastra produto
         Produto_Controller produtoControl = new Produto_Controller(jComboBox1.getSelectedIndex(), jTextField3.getText(), jTextField4.getText(), Float.valueOf(jTextField5.getText()));
         produtoControl.cadastrar();
+        
+        jComboBox1.setSelectedIndex(0);
+        jTextField3.setText("");
+        jTextField4.setText("");
+        jTextField5.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void onloadProdutos(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_onloadProdutos
