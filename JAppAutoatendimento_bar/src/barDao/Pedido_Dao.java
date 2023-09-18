@@ -65,8 +65,7 @@ public class Pedido_Dao {
                 + "" + this.pay + ","
                 + "'" + this.valorTotal + "')";
         Conexao.executar(sql);
-        JOptionPane.showMessageDialog(null, "Pedido computado!");
-    
+        
         String buscaIdPedido = "SELECT idPedido FROM pedido ORDER BY idPedido DESC";
         ResultSet rs = Conexao.consultar(buscaIdPedido);
         rs.next();
