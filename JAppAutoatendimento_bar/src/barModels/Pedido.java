@@ -56,9 +56,10 @@ public class Pedido {
         this.produtos = produtos;
     }
     
-    public void fechaPedido () {
+    public boolean fechaPedido () {
     Pedido_Dao pDao = new Pedido_Dao(this.pay, this.produtos, this.valorTotal);
-    pDao.fechaPedido();
+    return pDao.fechaPedido();
+        
     }
     
     

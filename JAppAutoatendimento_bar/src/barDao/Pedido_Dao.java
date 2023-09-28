@@ -58,7 +58,7 @@ public class Pedido_Dao {
         this.produtos = produtos;
     }
     
-    public void fechaPedido () {
+    public boolean fechaPedido () {
         
             try {
                 String sql = "INSERT INTO pedido (formaPagamento, valorTotal) VALUES ("
@@ -81,5 +81,6 @@ public class Pedido_Dao {
             }catch (Exception e) {
                     JOptionPane.showMessageDialog(null, "Pedido_Dao fechaPedido " + e);
         }
+        return true;
     }
 }

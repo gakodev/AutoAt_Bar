@@ -58,12 +58,13 @@ public class Pedido_Controller {
         this.produtos = produtos;
     }
     
-    public void fechaPedido () {
+    public boolean fechaPedido () {
         if(this.pay == 0 ){
-        JOptionPane.showMessageDialog(null, "Por favor insira um método de pagamento válido!");
+            return false;
         } else {
-    Pedido p = new Pedido(this.pay, this.produtos, this.valorTotal);
-    p.fechaPedido();
+            Pedido p = new Pedido(this.pay, this.produtos, this.valorTotal);
+           return p.fechaPedido();
         }
+         
     }
 }

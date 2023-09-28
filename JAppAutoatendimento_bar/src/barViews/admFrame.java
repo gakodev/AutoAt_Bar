@@ -49,7 +49,7 @@ public class admFrame extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(0, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(1, 103, 228));
 
         jLabel2.setText("Tipo:");
 
@@ -202,7 +202,7 @@ public class admFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Editar produto", jPanel4);
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel2.setBackground(new java.awt.Color(4, 38, 152));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
